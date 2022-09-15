@@ -249,7 +249,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 
         crud_api_lambda = _lambda.Function(
             self,
-            "HelloHandler",
+            "CrudHandler",
             runtime=_lambda.Runtime.NODEJS_16_X,
             code=_lambda.Code.from_asset("lambda"),
             handler="crud.handler",
