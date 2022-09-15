@@ -388,7 +388,7 @@ You should get back the following output:
 "Put item abcdef234"
 ```
 
-> **_CHALLENGE_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2)?
+> **_CHALLENGE_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2/#tables)?
 
 ### Step 6.2 - Get all items
 Use the following command to list all items:
@@ -447,7 +447,7 @@ Run and watch output:
 cdk destroy
 ```
 
-Now go to [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2) and see if your table has been deleted (Don't delete it!)
+Now go to [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2/#tables) and see if your table has been deleted (Don't delete it!)
 
 > **_CHALLENGE_**: Have a look at the [DynamoDB Table Construct](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.aws_dynamodb/Table.html) documentation and try to think about why the table has not been deleted.
 
