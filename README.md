@@ -113,7 +113,7 @@ Below `# The code that defines your stack goes here` add:
         )
 ```
 
-Run `cdk synth` and check cdk.out/YourStackName.template.json.
+Run `cdk synth` and check `cdk.out/YourStackName.template.json`.
 
 Run `cdk deploy` and check the output.
 
