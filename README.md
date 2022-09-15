@@ -121,7 +121,7 @@ We first will create the Lambda function itself:
 mkdir lambda
 touch lambda/crud.js
 ```
-Open this file and add the following Node.js code:
+Open this file (`lambda/crud.js`) and add the following Node.js code:
 ```javascript
 const AWS = require("aws-sdk");
 
