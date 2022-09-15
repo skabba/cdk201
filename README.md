@@ -115,7 +115,19 @@ Below `# The code that defines your stack goes here` add:
 
 Run `cdk synth` and check `cdk.out/YourStackName.template.json`.
 
-Run `cdk deploy` and check the output.
+Run `cdk deploy` and check the output:
+```console
+ ✅  MyFirstCrudApiQFaxthUagmStack
+
+✨  Deployment time: 31.87s
+
+Stack ARN:
+arn:aws:cloudformation:eu-west-1:803120882800:stack/MyFirstCrudApiQFaxthUagmStack/725c2260-352b-11ed-86ac-06ac9ad3f395
+
+✨  Total time: 39.57s
+```
+
+Your DynamoDB table has now been deployed!
 
 ### Step 5.2 - Add CRUD Lambda Function
 We first will create the Lambda function itself:
