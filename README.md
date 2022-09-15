@@ -263,7 +263,7 @@ Run `cdk synth` and check cdk.out/YourStackName.template.json.
 
 Run `cdk deploy` and check the output.
 
-> **_CHALLENGE:_**: Have a look around in your new [Lambda Function](https://eu-west-1.console.aws.amazon.com/lambda).
+> **_CHALLENGE_**: Have a look around in your new [Lambda Function](https://eu-west-1.console.aws.amazon.com/lambda).
 
 ### Step 5.3 - Add CRUD Rest API Gateway
 Below the Lambda function resource code, add:
