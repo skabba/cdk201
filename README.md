@@ -331,9 +331,14 @@ Check `cdk deploy` output. You should see something like:
 Outputs:
 MyFirstCrudApiBGSoAiEbNxStack.CrudApiEndpoint4D383D02 = https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/
 ```
-Now run `curl -X GET https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/items`.
+Now run:
+```shell
+curl -X GET https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/items`.
+```
 
 You should get back the following output:
-`{"Items":[],"Count":0,"ScannedCount":0}`
+```console
+{"Items":[],"Count":0,"ScannedCount":0}
+```
 
-Congratulations! You just created you fully working CRUD API running on Amazon Web Services, using only Serverless.
+Congratulations! You have just created you fully working CRUD API running on Amazon Web Services, using only Serverless.
