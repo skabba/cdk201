@@ -4,6 +4,11 @@ Build your first CRUD API in 45 minutes or less with AWS CDK!
 ## Welcome
 Foo bar
 
+## Prep
+This workshop will be executed from within an AWS Cloud9 (Online IDE) environment.
+
+To open this online IDE you first need to login here: https://obsessedbyaws.signin.aws.amazon.com/console.
+
 ## Step 1
 ```
 export STACK_SUFFIX=$(cat /dev/urandom | \
