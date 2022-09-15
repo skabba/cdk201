@@ -1,3 +1,4 @@
+from inspect import stack
 from aws_cdk import (
     Stack,
     aws_lambda as _lambda,
@@ -35,7 +36,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 
         crud_rest_api = apigw.LambdaRestApi(
             self,
-            "CrudApi",
+            f"CrudApi_{Stack.stack_name}",
             handler=crud_lambda,
             proxy=False,  # Because we manually add resources + methods
         )

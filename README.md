@@ -249,6 +249,8 @@ Run `cdk synth` and check cdk.out/YourStackName.template.json.
 
 Run `cdk deploy` and check the output.
 
+> **_CHALLENGE:_**: Have a look around in your new [Lambda Function](https://eu-west-1.console.aws.amazon.com/lambda).
+
 ### Step 5.3 - Add CRUD Rest API Gateway
 Below the Lambda function resource code, add:
 ```python
@@ -325,20 +327,42 @@ Run `cdk synth` and check cdk.out/YourStackName.template.json.
 
 Run `cdk deploy` and check the output.
 
+> **_CHALLENGE:_**: Have a look around in your new [REST API](https://eu-west-1.console.aws.amazon.com/apigateway).
+
 ## Step 6 - Test your CRUD API!
 Check `cdk deploy` output. You should see something like:
 ```console
 Outputs:
 MyFirstCrudApiBGSoAiEbNxStack.CrudApiEndpoint4D383D02 = https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/
 ```
+
+Use this output in the following command:
+```shell
+#DO NOT COPY THIS!!!
+#Replace URL with the Invoke URL above
+export INVOKE_URL="https://YourApiUri.execute-api.eu-west-1.amazonaws.com"
+```
+
 Now run:
 ```shell
-curl -X GET https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/items`.
+curl -X GET ${INVOKE_URL}/prod/items
 ```
 
 You should get back the following output:
-```console
+```json
 {"Items":[],"Count":0,"ScannedCount":0}
 ```
 
-Congratulations! You have just created you fully working CRUD API running on Amazon Web Services, using only Serverless.
+Congratulations! You have just created you fully working CRUD API running on Amazon Web Services, using only Serverless. But there are no items :-(. That's correct because we still need to add them using our CRUD API.
+
+### Step 6.1 - Create or update an item
+Now it is time to add some items! The following command includes a request body with the item's ID, price, and name.
+```shell
+curl -X "PUT" -H "Content-Type: application/json" -d "{
+    \"id\": \"abcdef234\",
+    \"price\": 12345,
+    \"name\": \"myitem\"
+}" $INVOKE_URL/items
+```
+
+> **_CHALLENGE:_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2)?
