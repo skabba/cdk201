@@ -54,7 +54,7 @@ Run `cdk synth` and check the output. Also, did you notice that a folder named `
 The `cdk.out` folder contains a JSON CloudFormation template of your compiled CDK code.
 
 ## Step 3
-Run `cdk deploy` to deploy your CDK app and check the output. In a new browser tab open: https://eu-west-1.console.aws.amazon.com/cloudformation and search/select/open for your "MyFirstCrudApi${STACK_SUFFIX}Stack" stack. You can now review your stack configuration.
+Run `cdk deploy` to deploy your (still empty) CDK app and check the output. In a new browser tab open: https://eu-west-1.console.aws.amazon.com/cloudformation and search/select/open for your "MyFirstCrudApi${STACK_SUFFIX}Stack" stack. You can now review your stack configuration.
 
 ## Step 4
 Open your `my_first_crud_api_${STACK_SUFFIX}` folder and then open the `my_first_crud_api_${STACK_SUFFIX}_stack.py` file.
