@@ -63,11 +63,11 @@ Open your `my_first_crud_api_${STACK_SUFFIX}` folder and then open the `my_first
 
 Remove this piece of code:
 ```python
-        # example resource
-        # queue = sqs.Queue(
-        #     self, "MyFirstCrudApiRufZeyFmJkQueue",
-        #     visibility_timeout=Duration.seconds(300),
-        # )
+# example resource
+# queue = sqs.Queue(
+#     self, "MyFirstCrudApiRufZeyFmJkQueue",
+#     visibility_timeout=Duration.seconds(300),
+# )
 ```
 
 ### Step 4.1
@@ -103,14 +103,14 @@ We are now going to add the code to define our CRUD API resources.
 ### Step 5.1 - Add DynamoDB Table
 Below `# The code that defines your stack goes here` add:
 ```python
-        crud_ddb_table = dynamodb.Table(
-            self,
-            "CrudApiTable",
-            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
-            partition_key=dynamodb.Attribute(
-                name="id", type=dynamodb.AttributeType.STRING
-            ),
-        )
+crud_ddb_table = dynamodb.Table(
+    self,
+    "CrudApiTable",
+    billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+    partition_key=dynamodb.Attribute(
+        name="id", type=dynamodb.AttributeType.STRING
+    ),
+)
 ```
 
 Run `cdk synth` and check `cdk.out/YourStackName.template.json`.
@@ -209,16 +209,16 @@ exports.handler = async (event, context) => {
 ```
 Then go back to the file where we were defining our CRUD API Stack (the `my_first_crud_api_${STACK_SUFFIX}_stack.py` file). Then below the previously added DynamoDB resource code, add the following code:
 ```python
-        crud_api_lambda = _lambda.Function(
-            self,
-            "HelloHandler",
-            runtime=_lambda.Runtime.NODEJS_16_X,
-            code=_lambda.Code.from_asset("lambda"),
-            handler="crud.handler",
-            environment={"DYNAMODB_TABLE_NAME": crud_ddb_table.table_name},
-        )
+crud_api_lambda = _lambda.Function(
+    self,
+    "HelloHandler",
+    runtime=_lambda.Runtime.NODEJS_16_X,
+    code=_lambda.Code.from_asset("lambda"),
+    handler="crud.handler",
+    environment={"DYNAMODB_TABLE_NAME": crud_ddb_table.table_name},
+)
 
-        crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
+crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 ```
 
 The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
@@ -263,25 +263,25 @@ Run `cdk synth` and check cdk.out/YourStackName.template.json.
 
 Run `cdk deploy` and check the output.
 
-> **_CHALLENGE_**: Have a look around in your new [Lambda Function](https://eu-west-1.console.aws.amazon.com/lambda).
+> **_CHALLENGE_**: Have a look around in your new [Lambda Function](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions?fo=and&o0=%3A&v0=MyFirstCrudApi).
 
 ### Step 5.3 - Add CRUD Rest API Gateway
 Below the Lambda function resource code, add:
 ```python
-        crud_api_gw = apigw.LambdaRestApi(
-            self,
-            "CrudApi",
-            handler=crud_api_lambda,
-            proxy=False, # Because we manually add resources + methods
-        )
+crud_api_gw = apigw.LambdaRestApi(
+    self,
+    "CrudApi",
+    handler=crud_api_lambda,
+    proxy=False, # Because we manually add resources + methods
+)
 
-        items = crud_api_gw.root.add_resource("items")
-        items.add_method("GET")  # GET /items
-        items.add_method("PUT")  # PUT /items
+items = crud_api_gw.root.add_resource("items")
+items.add_method("GET")  # GET /items
+items.add_method("PUT")  # PUT /items
 
-        item = items.add_resource("{id}")
-        item.add_method("GET")  # GET /items/{id}
-        item.add_method("DELETE")  # DELETE /items/{id}
+item = items.add_resource("{id}")
+item.add_method("GET")  # GET /items/{id}
+item.add_method("DELETE")  # DELETE /items/{id}
 ```
 
 The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
