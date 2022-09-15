@@ -272,6 +272,6 @@ Below the Lambda function resource code, add:
 Check `cdk deploy` output. You should see something like:
 ```console
 Outputs:
-MyFirstCrudApiBGSoAiEbNxStack.CrudApiEndpoint4D383D02 = https://xjjv242sl4.execute-api.eu-west-1.amazonaws.com/prod/
+MyFirstCrudApiBGSoAiEbNxStack.CrudApiEndpoint4D383D02 = https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/
 ```
 Now run `curl -X GET https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/items`.
