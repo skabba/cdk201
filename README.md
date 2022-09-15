@@ -58,9 +58,9 @@ The `cdk.out` folder contains a JSON CloudFormation template of your compiled CD
 Run `cdk deploy` to deploy your CDK app and check the output. In a new browser tab open: https://eu-west-1.console.aws.amazon.com/cloudformation.
 
 ## Step 4
-Open your my_first_crud_api_STACK_SUFFIX folder and module (.py file inside this folder).
+Open your my_first_crud_api_${STACK_SUFFIX} folder and module (open the my_first_crud_api_${STACK_SUFFIX}_stack.py file).
 
-Replace this piece of code:
+Remove this piece of code:
 ```
 # The code that defines your stack goes here
 
@@ -71,37 +71,6 @@ Replace this piece of code:
         # )
 ```
 
-with this piece of code:
-
-```
-        # Define nested stacks
-        self.storage_stack = StorageStack(
-            scope=self,
-            construct_id="StorageStack",
-        )
-```
-
-And add these imports above the `MyFirstCrudApiSTACK_SUFFIX class:
-
-Example (use your own module name!):
-```
-# import nested stacks
-from my_first_crud_api_ruf_zey_fm_jk_stack.stacks.storage import StorageStack
-```
-
-Now run:
-```
-MODULE_FOLDER=$(find . -type d -name my_first_crud_api*)
-mkdir ${MODULE_FOLDER}/stacks/
-touch ${MODULE_FOLDER}/stacks/__init__.py
-touch ${MODULE_FOLDER}/stacks/storage.py
-```
-
-
-
-
-```
-mkdir -p ${MODULE_FOLDER}/stacks/api_resources
-mkdir ${MODULE_FOLDER}/constructs
-touch ${MODULE_FOLDER}/stacks/api.py
-```
+### Step 4.1
+Now add a few imports we are going to need. Our CRUD API will need the following AWS services:
+![CRUD API resources](https://static.us-east-1.prod.workshops.aws/public/67bee81b-1d79-49a0-96ec-6aea8f9357d2/static/images/ddb-crud.png)
