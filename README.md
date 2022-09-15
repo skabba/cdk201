@@ -267,3 +267,11 @@ Below the Lambda function resource code, add:
         item.add_method("GET")  # GET /items/{id}
         item.add_method("DELETE")  # DELETE /items/{id}
 ```
+
+## Step 6 - Test your CRUD API!
+Check `cdk deploy` output. You should see something like:
+```console
+Outputs:
+MyFirstCrudApiBGSoAiEbNxStack.CrudApiEndpoint4D383D02 = https://xjjv242sl4.execute-api.eu-west-1.amazonaws.com/prod/
+```
+Now run `curl -X GET https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod/items`.
