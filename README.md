@@ -454,3 +454,9 @@ Now go to [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2/#tables
 > **_CHALLENGE_**: Have a look at the [DynamoDB Table Construct](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.aws_dynamodb/Table.html) documentation and try to think about why the table has not been deleted.
 
 Just leave the table alone, it will be deleted for you.
+
+### Step 7.1
+Please also delete your Cloud9 environment.
+
+## Thanks a lot!
+Thank you very much for doing this CDK201 workshop. I hope you enjoyed it and learned something new.
