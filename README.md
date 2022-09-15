@@ -93,7 +93,7 @@ from aws_cdk import (
 )
 ```
 
-> **_NOTE:_** we import aws_lambda specifically as _lambda, because lambda is a Python keyword.
+> **_NOTE:_** we import aws_lambda specifically as _lambda (note the underscore), because lambda is a Python keyword.
 
 ## Step 5
 Now we are going to add the code to define our needed resources.
