@@ -78,7 +78,15 @@ Our CRUD API will need the following AWS services:
 
 We can import these CDK modules in our code.
 
-In `my_first_crud_api_${STACK_SUFFIX}_stack.py`:
+In `my_first_crud_api_${STACK_SUFFIX}_stack.py` **CHANGE**:
+```
+from aws_cdk import (
+    Duration,
+    Stack,
+    aws_sqs as sqs,
+)
+```
+**INTO**:
 ```
 from aws_cdk import (
     Stack,
