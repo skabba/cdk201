@@ -11,6 +11,8 @@ To open this online IDE you first need to login here: https://obsessedbyaws.sign
 
 ## Step 1
 ```shell
+git config --global user.email "fake@example.com"
+git config --global user.name "Fake Name"
 export STACK_SUFFIX=$(cat /dev/urandom | \
                     tr -dc '[:alpha:]' | \
                     fold -w ${1:-10} | \
