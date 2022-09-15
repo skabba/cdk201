@@ -4,10 +4,14 @@ from aws_cdk import (
     Stack,
     NestedStack,
     aws_lambda as _lambda,
+    aws_iam as iam,
+    aws_apigateway as apigw,
 )
 
 
-class LambdaStack(NestedStack):
+
+
+class ApiLambdaStack(NestedStack):
     """The Lambda Stack for functions"""
 
     def __init__(
@@ -26,3 +30,5 @@ class LambdaStack(NestedStack):
             code=_lambda.Code.from_asset("lambda"),
             handler="hello.handler",
         )
+
+        self.crud_api_lambda.

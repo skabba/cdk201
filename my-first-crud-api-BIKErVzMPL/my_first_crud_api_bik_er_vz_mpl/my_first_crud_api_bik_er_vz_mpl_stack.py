@@ -7,7 +7,7 @@ from constructs import Construct
 
 # import nested stacks
 from my_first_crud_api_bik_er_vz_mpl.stacks.storage import StorageStack
-from my_first_crud_api_bik_er_vz_mpl.stacks.lambda import LambdaStack
+from my_first_crud_api_bik_er_vz_mpl.stacks._lambda import ApiLambdaStack
 
 
 class MyFirstCrudApiBikErVzMplStack(Stack):
@@ -20,7 +20,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
             construct_id="StorageStack",
         )
 
-        self.storage_stack = LambdaStack(
+        self.api_lambda_stack = ApiLambdaStack(
             scope=self,
-            construct_id="LambdaStack",
+            construct_id="ApiLambdaStack",
         )
