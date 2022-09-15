@@ -9,8 +9,6 @@ from aws_cdk import (
 )
 
 
-
-
 class ApiLambdaStack(NestedStack):
     """The Lambda Stack for functions"""
 
@@ -31,4 +29,4 @@ class ApiLambdaStack(NestedStack):
             handler="hello.handler",
         )
 
-        self.crud_api_lambda.
+        self.crud_api_lambda

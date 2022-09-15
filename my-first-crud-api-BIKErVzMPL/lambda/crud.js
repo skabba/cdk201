@@ -5,16 +5,18 @@ const dynamo = new AWS.DynamoDB.DocumentClient();
 exports.handler = async (event, context) => {
   let body;
   let statusCode = 200;
+  const tableName = process.env.DYNAMODB_TABLE_NAME;
+  const method_and_resource = event["httpMethod"] + " " + event["resource"];
   const headers = {
     "Content-Type": "application/json"
   };
 
   try {
-    switch (event.routeKey) {
+    switch (method_and_resource) {
       case "DELETE /items/{id}":
         await dynamo
           .delete({
-            TableName: "http-crud-tutorial-items",
+            TableName: tableName,
             Key: {
               id: event.pathParameters.id
             }
@@ -25,7 +27,7 @@ exports.handler = async (event, context) => {
       case "GET /items/{id}":
         body = await dynamo
           .get({
-            TableName: "http-crud-tutorial-items",
+            TableName: tableName,
             Key: {
               id: event.pathParameters.id
             }
@@ -33,13 +35,13 @@ exports.handler = async (event, context) => {
           .promise();
         break;
       case "GET /items":
-        body = await dynamo.scan({ TableName: "http-crud-tutorial-items" }).promise();
+        body = await dynamo.scan({ TableName: tableName }).promise();
         break;
       case "PUT /items":
         let requestJSON = JSON.parse(event.body);
         await dynamo
           .put({
-            TableName: "http-crud-tutorial-items",
+            TableName: tableName,
             Item: {
               id: requestJSON.id,
               price: requestJSON.price,
