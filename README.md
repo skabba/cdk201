@@ -10,7 +10,7 @@ This workshop will be executed from within an AWS Cloud9 (Online IDE) environmen
 To open this online IDE you first need to login here: https://obsessedbyaws.signin.aws.amazon.com/console.
 
 ## Step 1
-```console
+```shell
 export STACK_SUFFIX=$(cat /dev/urandom | \
                     tr -dc '[:alpha:]' | \
                     fold -w ${1:-10} | \
@@ -23,7 +23,7 @@ ls -al
 ### Explain files
 abc
 
-```console
+```shell
 total 28
 drwxrwxr-x 5 ec2-user ec2-user  206 Sep 14 08:34 .
 drwxrwxr-x 4 ec2-user ec2-user   86 Sep 14 08:34 ..
@@ -40,7 +40,7 @@ drwxrwxr-x 5 ec2-user ec2-user   74 Sep 14 08:34 .venv
 ```
 
 ### Step 1.1
-```console
+```shell
 source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -113,7 +113,7 @@ Below `# The code that defines your stack goes here` add:
 
 ### Step 5.2 - Add CRUD Lambda Function
 We first will create the Lambda function itself:
-```
+```shell
 mkdir lambda
 touch crud.js
 ```
