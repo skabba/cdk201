@@ -96,8 +96,11 @@ from aws_cdk import (
 
 > **_NOTE:_** we import aws_lambda specifically as _lambda, because lambda is a Python keyword.
 
-### Step 5.2
-Now we are going to add the code to define a DynamoDB table resource. Below `# The code that defines your stack goes here` add:
+## Step 6
+Now we are going to add the code to define our needed resources.
+
+### Step 6.1
+Below `# The code that defines your stack goes here` add:
 ```
         crud_ddb_table = dynamodb.Table(
             self,
@@ -107,4 +110,38 @@ Now we are going to add the code to define a DynamoDB table resource. Below `# T
                 name="id", type=dynamodb.AttributeType.STRING
             ),
         )
+```
+
+### Step 6.2
+Below that, add:
+```
+        crud_api_lambda = _lambda.Function(
+            self,
+            "HelloHandler",
+            runtime=_lambda.Runtime.NODEJS_16_X,
+            code=_lambda.Code.from_asset("lambda"),
+            handler="crud.handler",
+            environment={"DYNAMODB_TABLE_NAME": crud_ddb_table.table_name},
+        )
+
+        crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
+```
+
+### Step 6.3
+Below that, add:
+```
+        crud_api_gw = apigw.LambdaRestApi(
+            self,
+            "CrudApi",
+            handler=crud_api_lambda,
+            proxy=False,
+        )
+
+        items = crud_api_gw.root.add_resource("items")
+        items.add_method("GET")  # GET /items
+        items.add_method("PUT")  # PUT /items
+
+        item = items.add_resource("{id}")
+        item.add_method("GET")  # GET /items/{id}
+        item.add_method("DELETE")  # DELETE /items/{id}
 ```
