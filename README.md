@@ -2,7 +2,11 @@
 Build your first CRUD API in 60 minutes or less with AWS CDK!
 
 ## Welcome
-In this workshop you will create a CRUD API that Creates, Reads, Updates and Deletes items from a DynamoDB table. The API will run serverless, so there is no management of the underlying infrastructure and scaling is done automatically. You will learn how to use AWS CDK and how easy it is to create a REST API with it on AWS, all within 60 minutes.
+In this workshop you will create a **CRUD API** that **C**reates, **R**eads, **U**pdates and **D**eletes items from a DynamoDB table. The API will run serverless, so there is no management of the underlying infrastructure and scaling is done automatically.
+
+You will learn how easy it is to create an API on AWS with AWS CDK, all within 60 minutes.
+
+The workshop features the creation of a DynamoDB table, HTTP API Gateway and a Lambda function.
 
 ## Prep
 This workshop will be executed from within an AWS Cloud9 (Online IDE) environment.
@@ -270,7 +274,7 @@ Below the Lambda function resource code, add:
 ```python
 crud_api_gw = apigw.LambdaRestApi(
     self,
-    "CrudApi",
+    f"CrudApi_{Stack.stack_name}",
     handler=crud_api_lambda,
     proxy=False, # Because we manually add resources + methods
 )
