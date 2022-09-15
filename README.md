@@ -206,7 +206,7 @@ Then go back to the file where we were defining our CRUD API Stack (the `my_firs
         crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 ```
 
-The entire file should now look like:
+The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
 ```python
 from aws_cdk import (
     Stack,
