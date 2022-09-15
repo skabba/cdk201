@@ -189,7 +189,7 @@ exports.handler = async (event, context) => {
   };
 };
 ```
-Below that, add:
+Then back in the file where we are defining our Stack(`my_first_crud_api_${STACK_SUFFIX}_stack.py`). Below the DynamoDB resource code, add:
 ```python
         crud_api_lambda = _lambda.Function(
             self,
