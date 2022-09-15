@@ -1,5 +1,5 @@
 # CDK201
-Build your first CRUD API in 45 minutes or less with AWS CDK!
+Build your first CRUD API in 60 minutes or less with AWS CDK!
 
 ## Welcome
 Foo bar
