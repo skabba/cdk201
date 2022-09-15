@@ -373,7 +373,7 @@ You should get back the following output:
 > **_CHALLENGE:_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2)?
 
 ### Step 6.2 - Get all items
-Use the following command to list all items.
+Use the following command to list all items:
 ```shell
 curl -s ${INVOKE_URL}/items | js-beautify
 ```
@@ -389,4 +389,32 @@ You should get back the following output:
     "Count": 1,
     "ScannedCount": 1
 }
+```
+
+### Step 6.3 - Get item by ID
+Use the following command to get an item by its ID:
+```shell
+curl -s $INVOKE_URL/items/abcdef234 | js-beautify
+```
+
+You should get back the following output:
+```json
+{
+    "Item": {
+        "price": 12345,
+        "id": "abcdef234",
+        "name": "myitem"
+    }
+}
+```
+
+### Step 6.4 - Delete item by ID
+Use the following command to delete an item:
+```shell
+curl -X "DELETE" $INVOKE_URL/items/abcdef234
+```
+
+Get all items to verify that the item was deleted:
+```shell
+curl -s $INVOKE_URL/items | js-beautify
 ```
