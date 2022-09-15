@@ -274,7 +274,7 @@ Below the Lambda function resource code, add:
 ```python
 crud_api_gw = apigw.LambdaRestApi(
     self,
-    f"CrudApi_{Stack.stack_name}",
+    f"CrudApi_{Stack.of(self).stack_name}",
     handler=crud_api_lambda,
     proxy=False, # Because we manually add resources + methods
 )
@@ -327,7 +327,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 
         crud_rest_api = apigw.LambdaRestApi(
             self,
-            "CrudApi",
+            f"CrudApi_{Stack.of(self).stack_name}",
             handler=crud_lambda,
             proxy=False,  # Because we manually add resources + methods
         )
