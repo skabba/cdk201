@@ -437,7 +437,7 @@ You should get back the following output:
 "Deleted item abcdef234"
 ```
 
-> **_CHALLENGE_**: Get all items to verify that the item was deleted.
+> **_CHALLENGE_**: Get all items to verify that the item was deleted or check in the AWS console.
 
 ## Step 7 - Clean UP!
 To prevent unnecessary costs, delete the resources that you created as part of this getting started exercise. The following steps delete your REST API, your Lambda function, and associated resources.
