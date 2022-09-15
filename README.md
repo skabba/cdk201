@@ -421,5 +421,11 @@ You should get back the following output:
 
 > **_CHALLENGE:_**: Get all items to verify that the item was deleted.
 
-## THE END
-Foo Bar.
+## Step 7 - Clean UP!
+To prevent unnecessary costs, delete the resources that you created as part of this getting started exercise. The following steps delete your REST API, your Lambda function, and associated resources.
+
+Run:
+```shell
+cdk destroy
+```
+
