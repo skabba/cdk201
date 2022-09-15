@@ -62,8 +62,6 @@ Open your `my_first_crud_api_${STACK_SUFFIX}` folder and then open the `my_first
 
 Remove this piece of code:
 ```
-# The code that defines your stack goes here
-
         # example resource
         # queue = sqs.Queue(
         #     self, "MyFirstCrudApiRufZeyFmJkQueue",
@@ -97,3 +95,16 @@ from aws_cdk import (
 ```
 
 > **_NOTE:_** we import aws_lambda specifically as _lambda, because lambda is a Python keyword.
+
+### Step 5.2
+Now we are going to add the code to define a DynamoDB table resource. Below `# The code that defines your stack goes here` add:
+```
+        crud_ddb_table = dynamodb.Table(
+            self,
+            "CrudApiTable",
+            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+            partition_key=dynamodb.Attribute(
+                name="id", type=dynamodb.AttributeType.STRING
+            ),
+        )
+```

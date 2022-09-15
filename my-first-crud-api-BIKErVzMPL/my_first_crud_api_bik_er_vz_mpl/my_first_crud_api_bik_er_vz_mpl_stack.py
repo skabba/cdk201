@@ -11,7 +11,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        crud_api_table = dynamodb.Table(
+        crud_ddb_table = dynamodb.Table(
             self,
             "CrudApiTable",
             billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
@@ -26,10 +26,10 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
             runtime=_lambda.Runtime.NODEJS_16_X,
             code=_lambda.Code.from_asset("lambda"),
             handler="crud.handler",
-            environment={"DYNAMODB_TABLE_NAME": crud_api_table.table_name},
+            environment={"DYNAMODB_TABLE_NAME": crud_ddb_table.table_name},
         )
 
-        crud_api_table.grant_full_access(crud_api_lambda.grant_principal)
+        crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 
         crud_api_gw = apigw.LambdaRestApi(
             self,
