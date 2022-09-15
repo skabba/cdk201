@@ -111,8 +111,7 @@ Below `# The code that defines your stack goes here` add:
         )
 ```
 
-#### Step 5.1.1
-Run `cdk synth` and check cdk.out/YOURSTACKNAME.template.json.
+Run `cdk synth` and check cdk.out/YourStackName.template.json.
 Run `cdk deploy` and check the output.
 
 ### Step 5.2 - Add CRUD Lambda Function
@@ -245,7 +244,6 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
         crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 ```
 
-#### Step 5.2.1
 Run `cdk synth` and check cdk.out/YourStackName.template.json.
 Run `cdk deploy` and check the output.
 
@@ -267,6 +265,9 @@ Below the Lambda function resource code, add:
         item.add_method("GET")  # GET /items/{id}
         item.add_method("DELETE")  # DELETE /items/{id}
 ```
+
+Run `cdk synth` and check cdk.out/YourStackName.template.json.
+Run `cdk deploy` and check the output.
 
 ## Step 6 - Test your CRUD API!
 Check `cdk deploy` output. You should see something like:
