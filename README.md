@@ -246,7 +246,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 ```
 
 #### Step 5.2.1
-Run `cdk synth` and check cdk.out/YOURSTACKNAME.template.json.
+Run `cdk synth` and check cdk.out/YourStackName.template.json.
 Run `cdk deploy` and check the output.
 
 ### Step 5.3 - Add CRUD Rest API Gateway
