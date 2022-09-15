@@ -244,6 +244,28 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
         crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 ```
 
+Run `cdk synth` and check cdk.out/YourStackName.template.json.
+Run `cdk deploy` and check the output.
+
+### Step 5.3 - Add CRUD Rest API Gateway
+Below the Lambda function resource code, add:
+```python
+        crud_api_gw = apigw.LambdaRestApi(
+            self,
+            "CrudApi",
+            handler=crud_api_lambda,
+            proxy=False, # Because we manually add resources + methods
+        )
+
+        items = crud_api_gw.root.add_resource("items")
+        items.add_method("GET")  # GET /items
+        items.add_method("PUT")  # PUT /items
+
+        item = items.add_resource("{id}")
+        item.add_method("GET")  # GET /items/{id}
+        item.add_method("DELETE")  # DELETE /items/{id}
+```
+
 The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
 ```python
 from aws_cdk import (
@@ -289,28 +311,6 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
         )
 
         items = crud_rest_api.root.add_resource("items")
-        items.add_method("GET")  # GET /items
-        items.add_method("PUT")  # PUT /items
-
-        item = items.add_resource("{id}")
-        item.add_method("GET")  # GET /items/{id}
-        item.add_method("DELETE")  # DELETE /items/{id}
-```
-
-Run `cdk synth` and check cdk.out/YourStackName.template.json.
-Run `cdk deploy` and check the output.
-
-### Step 5.3 - Add CRUD Rest API Gateway
-Below the Lambda function resource code, add:
-```python
-        crud_api_gw = apigw.LambdaRestApi(
-            self,
-            "CrudApi",
-            handler=crud_api_lambda,
-            proxy=False, # Because we manually add resources + methods
-        )
-
-        items = crud_api_gw.root.add_resource("items")
         items.add_method("GET")  # GET /items
         items.add_method("PUT")  # PUT /items
 
