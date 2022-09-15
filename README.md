@@ -111,11 +111,15 @@ Below `# The code that defines your stack goes here` add:
         )
 ```
 
+#### Step 5.1.1
+Run `cdk synth` and check cdk.out/YOURSTACKNAME.template.json.
+Run `cdk deploy` and check the output.
+
 ### Step 5.2 - Add CRUD Lambda Function
 We first will create the Lambda function itself:
 ```shell
 mkdir lambda
-touch crud.js
+touch lambda/crud.js
 ```
 Open this file and add the following Node.js code:
 ```javascript
@@ -240,6 +244,10 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 
         crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 ```
+
+#### Step 5.2.1
+Run `cdk synth` and check cdk.out/YOURSTACKNAME.template.json.
+Run `cdk deploy` and check the output.
 
 ### Step 5.3 - Add CRUD Rest API Gateway
 Below that, add:

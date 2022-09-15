@@ -22,7 +22,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
             ),
         )
 
-        crud_api_lambda = _lambda.Function(
+        crud_lambda = _lambda.Function(
             self,
             "HelloHandler",
             runtime=_lambda.Runtime.NODEJS_16_X,
@@ -31,16 +31,16 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
             environment={"DYNAMODB_TABLE_NAME": crud_ddb_table.table_name},
         )
 
-        crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
+        crud_ddb_table.grant_full_access(crud_lambda.grant_principal)
 
-        crud_api_gw = apigw.LambdaRestApi(
+        crud_rest_api = apigw.LambdaRestApi(
             self,
             "CrudApi",
-            handler=crud_api_lambda,
-            proxy=False, # Because we manually add resources + methods
+            handler=crud_lambda,
+            proxy=False,  # Because we manually add resources + methods
         )
 
-        items = crud_api_gw.root.add_resource("items")
+        items = crud_rest_api.root.add_resource("items")
         items.add_method("GET")  # GET /items
         items.add_method("PUT")  # PUT /items
 
