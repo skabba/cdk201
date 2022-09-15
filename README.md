@@ -23,7 +23,7 @@ ls -al
 ### Explain files
 abc
 
-```shell
+```console
 total 28
 drwxrwxr-x 5 ec2-user ec2-user  206 Sep 14 08:34 .
 drwxrwxr-x 4 ec2-user ec2-user   86 Sep 14 08:34 ..
