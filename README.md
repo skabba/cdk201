@@ -358,12 +358,12 @@ Use this output in the following command:
 ```shell
 #DO NOT COPY THIS!!!
 #Replace URL with the Invoke URL above
-export INVOKE_URL="https://YourApiUri.execute-api.eu-west-1.amazonaws.com"
+export INVOKE_URL="https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod"
 ```
 
 Now run:
 ```shell
-curl -X GET ${INVOKE_URL}/prod/items
+curl -X GET ${INVOKE_URL}/items
 ```
 
 You should get back the following output:
