@@ -12,7 +12,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # The code that defines your stack goes here
-        
+
         crud_ddb_table = dynamodb.Table(
             self,
             "CrudApiTable",
@@ -37,7 +37,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
             self,
             "CrudApi",
             handler=crud_api_lambda,
-            proxy=False,
+            proxy=False, # Because we manually add resources + methods
         )
 
         items = crud_api_gw.root.add_resource("items")

@@ -134,7 +134,7 @@ Below that, add:
             self,
             "CrudApi",
             handler=crud_api_lambda,
-            proxy=False,
+            proxy=False, # Because we manually add resources + methods
         )
 
         items = crud_api_gw.root.add_resource("items")
