@@ -96,7 +96,7 @@ from aws_cdk import (
 > **_NOTE:_** we import aws_lambda specifically as _lambda (note the underscore), because in Python, lambda is a keyword which cannot be used.
 
 ## Step 5
-Now we are going to add the code to define our needed resources.
+We are now going to add the code to define our CRUD API resources.
 
 ### Step 5.1 - Add DynamoDB Table
 Below `# The code that defines your stack goes here` add:
