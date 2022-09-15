@@ -8,6 +8,8 @@ You will learn how easy it is to create an API on AWS with AWS CDK, all within 6
 
 The workshop features the creation of a DynamoDB table, HTTP API Gateway and a Lambda function.
 
+This workshop is based on https://catalog.us-east-1.prod.workshops.aws/workshops/2c8321cb-812c-45a9-927d-206eea3a500f/en-US. But has been pimped so you can do the same but with AWS CDK code.
+
 ## Prep
 This workshop will be executed from within an AWS Cloud9 (Online IDE) environment.
 
