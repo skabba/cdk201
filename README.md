@@ -341,7 +341,7 @@ Run `cdk synth` and check cdk.out/YourStackName.template.json.
 
 Run `cdk deploy` and check the output.
 
-> **_CHALLENGE:_**: Have a look around in your new [REST API](https://eu-west-1.console.aws.amazon.com/apigateway).
+> **_CHALLENGE_**: Have a look around in your new [REST API](https://eu-west-1.console.aws.amazon.com/apigateway).
 
 ## Step 6 - Test your CRUD API!
 Check `cdk deploy` output. You should see something like:
@@ -384,7 +384,7 @@ You should get back the following output:
 "Put item abcdef234"
 ```
 
-> **_CHALLENGE:_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2)?
+> **_CHALLENGE_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2)?
 
 ### Step 6.2 - Get all items
 Use the following command to list all items:
@@ -433,7 +433,7 @@ You should get back the following output:
 "Deleted item abcdef234"
 ```
 
-> **_CHALLENGE:_**: Get all items to verify that the item was deleted.
+> **_CHALLENGE_**: Get all items to verify that the item was deleted.
 
 ## Step 7 - Clean UP!
 To prevent unnecessary costs, delete the resources that you created as part of this getting started exercise. The following steps delete your REST API, your Lambda function, and associated resources.
@@ -445,6 +445,6 @@ cdk destroy
 
 Now go to [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2) and see if your table has been deleted (Don't delete it!)
 
-> **_CHALLENGE:_**: Have a look at the [DynamoDB Table Construct](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.aws_dynamodb/Table.html) documentation and try to think about why the table has not been deleted.
+> **_CHALLENGE_**: Have a look at the [DynamoDB Table Construct](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.aws_dynamodb/Table.html) documentation and try to think about why the table has not been deleted.
 
 Just leave the table alone, it will be cleanup up for you.
