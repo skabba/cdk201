@@ -71,10 +71,10 @@ Remove this piece of code:
         # )
 ```
 
-### Step 4.1
+### Step 5.1
 Our CRUD API will need the following AWS services:
 
-![CRUD API resources](https://static.us-east-1.prod.workshops.aws/public/67bee81b-1d79-49a0-96ec-6aea8f9357d2/static/images/ddb-crud.png)
+![CRUD API resources](https://miro.medium.com/max/1400/1*N1iRLifjnNcZo-W0oxoYSw.png)
 
 We can import these CDK modules into our code:
 
