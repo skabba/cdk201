@@ -362,7 +362,13 @@ curl -X "PUT" -H "Content-Type: application/json" -d "{
     \"id\": \"abcdef234\",
     \"price\": 12345,
     \"name\": \"myitem\"
-}" $INVOKE_URL/items
+}" ${INVOKE_URL}/items
 ```
 
 > **_CHALLENGE:_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2)?
+
+### Step 6.2 - Get all items
+Use the following command to list all items.
+```shell
+curl -s ${INVOKE_URL}/items | js-beautify
+```
