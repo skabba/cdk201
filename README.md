@@ -424,8 +424,13 @@ You should get back the following output:
 ## Step 7 - Clean UP!
 To prevent unnecessary costs, delete the resources that you created as part of this getting started exercise. The following steps delete your REST API, your Lambda function, and associated resources.
 
-Run:
+Run and watch output:
 ```shell
 cdk destroy
 ```
 
+Now go to [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2) and see if your table has been deleted (Don't delete it!)
+
+> **_CHALLENGE:_**: Have a look at the [DynamoDB Table Construct](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.aws_dynamodb/Table.html) documentation and try to think about why the table has not been deleted.
+
+Just leave the table alone, it will be cleanup up for you.
