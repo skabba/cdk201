@@ -365,10 +365,28 @@ curl -X "PUT" -H "Content-Type: application/json" -d "{
 }" ${INVOKE_URL}/items
 ```
 
+You should get back the following output:
+```console
+"Put item abcdef234"
+```
+
 > **_CHALLENGE:_**: Can you find this entry in [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2)?
 
 ### Step 6.2 - Get all items
 Use the following command to list all items.
 ```shell
 curl -s ${INVOKE_URL}/items | js-beautify
+```
+
+You should get back the following output:
+```json
+{
+    "Items": [{
+        "price": 12345,
+        "id": "abcdef234",
+        "name": "myitem"
+    }],
+    "Count": 1,
+    "ScannedCount": 1
+}
 ```
