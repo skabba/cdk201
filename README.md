@@ -112,6 +112,7 @@ Below `# The code that defines your stack goes here` add:
 ```
 
 Run `cdk synth` and check cdk.out/YourStackName.template.json.
+
 Run `cdk deploy` and check the output.
 
 ### Step 5.2 - Add CRUD Lambda Function
@@ -245,6 +246,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 ```
 
 Run `cdk synth` and check cdk.out/YourStackName.template.json.
+
 Run `cdk deploy` and check the output.
 
 ### Step 5.3 - Add CRUD Rest API Gateway
@@ -320,6 +322,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 ```
 
 Run `cdk synth` and check cdk.out/YourStackName.template.json.
+
 Run `cdk deploy` and check the output.
 
 ## Step 6 - Test your CRUD API!
