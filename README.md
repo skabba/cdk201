@@ -54,10 +54,10 @@ Run `cdk synth` and check the output. Also, did you notice that a folder named `
 
 The `cdk.out` folder contains a JSON CloudFormation template of your compiled CDK code.
 
-### Step 3.1
-Run `cdk deploy` to deploy your CDK app and check the output. In a new browser tab open: https://eu-west-1.console.aws.amazon.com/cloudformation.
-
 ## Step 4
+Run `cdk deploy` to deploy your CDK app and check the output. In a new browser tab open: https://eu-west-1.console.aws.amazon.com/cloudformation and search/select/open for your "MyFirstCrudApi${STACK_SUFFIX}Stack" stack. You can now review your stack configuration.
+
+## Step 5
 Open your my_first_crud_api_${STACK_SUFFIX} folder and module (open the my_first_crud_api_${STACK_SUFFIX}_stack.py file).
 
 Remove this piece of code:
@@ -72,5 +72,19 @@ Remove this piece of code:
 ```
 
 ### Step 4.1
-Now add a few imports we are going to need. Our CRUD API will need the following AWS services:
+Our CRUD API will need the following AWS services:
+
 ![CRUD API resources](https://static.us-east-1.prod.workshops.aws/public/67bee81b-1d79-49a0-96ec-6aea8f9357d2/static/images/ddb-crud.png)
+
+We can import these CDK modules into our code:
+
+```
+from aws_cdk import (
+    Stack,
+    aws_lambda as _lambda,
+    aws_apigateway as apigw,
+    aws_dynamodb as dynamodb,
+)
+```
+
+> **_NOTE:_** we import aws_lambda specifically as _lambda, because lambda is a Python keyword.
