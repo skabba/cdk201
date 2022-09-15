@@ -99,7 +99,7 @@ from aws_cdk import (
 ## Step 6
 Now we are going to add the code to define our needed resources.
 
-### Step 6.1
+### Step 6.1 - Add DynamoDB Table
 Below `# The code that defines your stack goes here` add:
 ```
         crud_ddb_table = dynamodb.Table(
@@ -112,7 +112,7 @@ Below `# The code that defines your stack goes here` add:
         )
 ```
 
-### Step 6.2
+### Step 6.2 - Add CRUD Lambda Function
 Below that, add:
 ```
         crud_api_lambda = _lambda.Function(
@@ -127,7 +127,7 @@ Below that, add:
         crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 ```
 
-### Step 6.3
+### Step 6.3 - Add CRUD Rest API Gateway
 Below that, add:
 ```
         crud_api_gw = apigw.LambdaRestApi(
