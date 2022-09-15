@@ -451,4 +451,4 @@ Now go to [DynamoDB](https://eu-west-1.console.aws.amazon.com/dynamodbv2/#tables
 
 > **_CHALLENGE_**: Have a look at the [DynamoDB Table Construct](https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.aws_dynamodb/Table.html) documentation and try to think about why the table has not been deleted.
 
-Just leave the table alone, it will be cleanup up for you.
+Just leave the table alone, it will be deleted for you.
