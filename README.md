@@ -250,7 +250,7 @@ Run `cdk synth` and check cdk.out/YOURSTACKNAME.template.json.
 Run `cdk deploy` and check the output.
 
 ### Step 5.3 - Add CRUD Rest API Gateway
-Below that, add:
+Below the Lambda function resource code, add:
 ```python
         crud_api_gw = apigw.LambdaRestApi(
             self,
