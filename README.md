@@ -2,7 +2,7 @@
 Build your first CRUD API in 60 minutes or less with AWS CDK!
 
 ## Welcome
-Foo bar
+In this workshop you will create a CRUD API that Creates, Reads, Updates and Deletes items from a DynamoDB table. The API will run serverless, so there is no management of the underlying infrastructure and scaling is done automatically. You will learn how to use AWS CDK and how easy it is to create a REST API with it on AWS, all within 60 minutes.
 
 ## Prep
 This workshop will be executed from within an AWS Cloud9 (Online IDE) environment.
