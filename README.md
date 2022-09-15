@@ -414,7 +414,12 @@ Use the following command to delete an item:
 curl -X "DELETE" $INVOKE_URL/items/abcdef234
 ```
 
-Get all items to verify that the item was deleted:
-```shell
-curl -s $INVOKE_URL/items | js-beautify
+You should get back the following output:
+```console
+"Deleted item abcdef234"
 ```
+
+> **_CHALLENGE:_**: Get all items to verify that the item was deleted.
+
+## THE END
+Foo Bar.
