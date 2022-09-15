@@ -45,7 +45,8 @@ drwxrwxr-x 5 ec2-user ec2-user   74 Sep 14 08:34 .venv
 ```shell
 source .venv/bin/activate
 python -m pip install --upgrade pip
-pip install aws-cdk-lib constructs black
+pip install -r requirements.txt
+pip install black
 pip freeze > requirements.txt
 ```
 
