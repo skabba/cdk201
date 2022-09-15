@@ -76,9 +76,9 @@ Our CRUD API will need the following AWS services:
 
 ![CRUD API resources](https://miro.medium.com/max/1400/1*N1iRLifjnNcZo-W0oxoYSw.png)
 
-We can import these CDK modules in our code:
+We can import these CDK modules in our code.
 
-`my_first_crud_api_${STACK_SUFFIX}_stack.py`
+In `my_first_crud_api_${STACK_SUFFIX}_stack.py`:
 ```
 from aws_cdk import (
     Stack,
