@@ -237,6 +237,7 @@ exports.handler = async (event, context) => {
 ```
 Then go back to the file where we were defining our CRUD API Stack (the `my_first_crud_api_${STACK_SUFFIX}_stack.py` file). Then below the previously added DynamoDB resource code, add the following code:
 ```python
+
         crud_api_lambda = _lambda.Function(
             self,
             "CrudHandler",
@@ -297,6 +298,7 @@ Run `cdk deploy` and check the output.
 ### Step 5.3 - Add CRUD Rest API Gateway
 Below the Lambda function resource code, add:
 ```python
+
         crud_api_gw = apigw.LambdaRestApi(
             self,
             f"CrudApi_{Stack.of(self).stack_name}",
