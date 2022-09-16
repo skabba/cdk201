@@ -5,7 +5,7 @@
 #
 #         USAGE: ./delete-users.sh [username]
 #    LOOP USAGE: for int in $(seq 5); \
-#                  do ./delete-users.sh cdk201-user${int}; \
+#                  do ./delete-users.sh [username]${int}; \
 #                done
 #
 #   DESCRIPTION: Bulk delete workshop users

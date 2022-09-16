@@ -5,7 +5,7 @@
 #
 #         USAGE: ./create-users.sh [username] [account_id] [account_alias]
 #    LOOP USAGE: for int in $(seq 5); \
-#                  do ./create-users.sh cdk201-user${int} 803120882800 obsessedbyaws; \
+#                  do ./create-users.sh [username]${int} [account_id] [account_alias]; \
 #                done
 #
 #   DESCRIPTION: Bulk create workshop users
