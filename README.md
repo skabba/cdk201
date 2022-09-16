@@ -156,6 +156,7 @@ We first will create the Lambda function itself:
 ```shell
 mkdir lambda
 touch lambda/crud.js
+
 ```
 Open this file (`lambda/crud.js`) and add the following Node.js code:
 ```javascript
@@ -231,16 +232,16 @@ exports.handler = async (event, context) => {
 ```
 Then go back to the file where we were defining our CRUD API Stack (the `my_first_crud_api_${STACK_SUFFIX}_stack.py` file). Then below the previously added DynamoDB resource code, add the following code:
 ```python
-crud_api_lambda = _lambda.Function(
-    self,
-    "HelloHandler",
-    runtime=_lambda.Runtime.NODEJS_16_X,
-    code=_lambda.Code.from_asset("lambda"),
-    handler="crud.handler",
-    environment={"DYNAMODB_TABLE_NAME": crud_ddb_table.table_name},
-)
+        crud_api_lambda = _lambda.Function(
+            self,
+            "HelloHandler",
+            runtime=_lambda.Runtime.NODEJS_16_X,
+            code=_lambda.Code.from_asset("lambda"),
+            handler="crud.handler",
+            environment={"DYNAMODB_TABLE_NAME": crud_ddb_table.table_name},
+        )
 
-crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
+        crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
 ```
 
 The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
