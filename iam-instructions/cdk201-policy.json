@@ -83,10 +83,12 @@
                 "s3:*Object"
             ],
             "Resource": [
-                "arn:aws:apigateway:eu-west-1::/apis",
-                "arn:aws:apigateway:eu-west-1::/restapis",
                 "arn:aws:apigateway:eu-west-1::/account",
+                "arn:aws:apigateway:eu-west-1::/apis",
+                "arn:aws:apigateway:eu-west-1::/clientcertificates",
+                "arn:aws:apigateway:eu-west-1::/restapis",
                 "arn:aws:apigateway:eu-west-1::/restapis/*",
+                "arn:aws:apigateway:eu-west-1::/usageplans",
                 "arn:aws:s3:::cdk-hnb659fds-assets-803120882800-eu-west-1",
                 "arn:aws:s3:::cdk-hnb659fds-assets-803120882800-eu-west-1/*"
             ]
