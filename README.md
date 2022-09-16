@@ -291,20 +291,20 @@ Run `cdk deploy` and check the output.
 ### Step 5.3 - Add CRUD Rest API Gateway
 Below the Lambda function resource code, add:
 ```python
-crud_api_gw = apigw.LambdaRestApi(
-    self,
-    f"CrudApi_{Stack.of(self).stack_name}",
-    handler=crud_api_lambda,
-    proxy=False, # Because we manually add resources + methods
-)
+        crud_api_gw = apigw.LambdaRestApi(
+            self,
+            f"CrudApi_{Stack.of(self).stack_name}",
+            handler=crud_api_lambda,
+            proxy=False, # Because we manually add resources + methods
+        )
 
-items = crud_api_gw.root.add_resource("items")
-items.add_method("GET")  # GET /items
-items.add_method("PUT")  # PUT /items
+        items = crud_api_gw.root.add_resource("items")
+        items.add_method("GET")  # GET /items
+        items.add_method("PUT")  # PUT /items
 
-item = items.add_resource("{id}")
-item.add_method("GET")  # GET /items/{id}
-item.add_method("DELETE")  # DELETE /items/{id}
+        item = items.add_resource("{id}")
+        item.add_method("GET")  # GET /items/{id}
+        item.add_method("DELETE")  # DELETE /items/{id}
 ```
 
 The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
