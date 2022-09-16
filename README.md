@@ -16,6 +16,9 @@ This workshop will be executed from within an AWS Cloud9 (Online IDE) environmen
 To open this online IDE you first need to login here: https://obsessedbyaws.signin.aws.amazon.com/console.
 
 ## Step 1
+Start by opening your [Cloud9 environment](https://eu-west-1.console.aws.amazon.com/cloud9/home) and click on `Open IDE`. Once it has loaded you can close the `Welcome` tab.
+EXPLAIN SOMETHING HERE
+
 ```shell
 git config --global user.email "fake@example.com"
 git config --global user.name "Fake Name"
@@ -26,6 +29,7 @@ export STACK_SUFFIX=$(cat /dev/urandom | \
 mkdir my-first-crud-api-${STACK_SUFFIX} && cd $_
 cdk init app --language=python
 ls -al
+
 ```
 
 ### Explain files
@@ -54,6 +58,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 pip install black
 pip freeze > requirements.txt
+
 ```
 
 ## Step 2
