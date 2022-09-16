@@ -62,7 +62,13 @@ pip freeze > requirements.txt
 ```
 
 ## Step 2
-Run `cdk synth` and check the output. Also, did you notice that a folder named `cdk.out` appeared in the root of your CDK project?
+Now run:
+```shell
+cdk synth
+````
+And check the output.
+
+Also, did you notice that a folder named `cdk.out` appeared in the root of your CDK project?
 
 The `cdk.out` folder contains a JSON CloudFormation template of your compiled CDK code.
 
