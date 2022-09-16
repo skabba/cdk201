@@ -137,6 +137,7 @@ Below `# The code that defines your stack goes here` add:
                 name="id", type=dynamodb.AttributeType.STRING
             ),
         )
+
 ```
 
 Run `cdk synth` and check `cdk.out/YourStackName.template.json`.
@@ -246,6 +247,7 @@ Then go back to the file where we were defining our CRUD API Stack (the `my_firs
         )
 
         crud_ddb_table.grant_full_access(crud_api_lambda.grant_principal)
+
 ```
 
 The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
@@ -309,6 +311,7 @@ Below the Lambda function resource code, add:
         item = items.add_resource("{id}")
         item.add_method("GET")  # GET /items/{id}
         item.add_method("DELETE")  # DELETE /items/{id}
+
 ```
 
 The entire file (`my_first_crud_api_${STACK_SUFFIX}_stack.py`) should now look like:
