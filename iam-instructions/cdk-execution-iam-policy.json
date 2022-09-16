@@ -1,0 +1,55 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachRolePolicy",
+                "iam:CreatePolicy",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:Get*",
+                "iam:List*",
+                "iam:PutRolePolicy",
+                "iam:SimulatePrincipalPolicy",
+                "iam:TagInstanceProfile",
+                "iam:TagMFADevice",
+                "iam:TagOpenIDConnectProvider",
+                "iam:TagPolicy",
+                "iam:TagRole",
+                "iam:TagSAMLProvider",
+                "iam:TagServerCertificate",
+                "iam:TagUser",
+                "iam:UntagInstanceProfile",
+                "iam:UntagMFADevice",
+                "iam:UntagOpenIDConnectProvider",
+                "iam:UntagPolicy",
+                "iam:UntagRole",
+                "iam:UntagSAMLProvider",
+                "iam:UntagServerCertificate",
+                "iam:UntagUser"
+            ],
+            "Resource": "arn:aws:iam::803120882800:role/MyFirstCrudApi*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetAccountAuthorizationDetails",
+                "iam:GetAccountPasswordPolicy",
+                "iam:GetAccountSummary",
+                "iam:GetContextKeysForCustomPolicy",
+                "iam:GetOrganizationsAccessReport",
+                "iam:GetServiceLastAccessedDetails",
+                "iam:GetServiceLastAccessedDetailsWithEntities",
+                "iam:ListAccountAliases",
+                "iam:ListGroups",
+                "iam:ListRoles",
+                "iam:ListUsers",
+                "iam:ListPolicies"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

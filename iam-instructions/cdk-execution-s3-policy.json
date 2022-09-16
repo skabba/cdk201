@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::cdk-hnb659fds-assets-803120882800-eu-west-1",
+                "arn:aws:s3:::cdk-hnb659fds-assets-803120882800-eu-west-1/*"
+            ]
+        }
+    ]
+}
