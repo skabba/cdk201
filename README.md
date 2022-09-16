@@ -125,14 +125,14 @@ We are now going to add the code to define our CRUD API resources.
 ### Step 5.1 - Add DynamoDB Table
 Below `# The code that defines your stack goes here` add:
 ```python
-crud_ddb_table = dynamodb.Table(
-    self,
-    "CrudApiTable",
-    billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
-    partition_key=dynamodb.Attribute(
-        name="id", type=dynamodb.AttributeType.STRING
-    ),
-)
+        crud_ddb_table = dynamodb.Table(
+            self,
+            "CrudApiTable",
+            billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
+            partition_key=dynamodb.Attribute(
+                name="id", type=dynamodb.AttributeType.STRING
+            ),
+        )
 ```
 
 Run `cdk synth` and check `cdk.out/YourStackName.template.json`.
