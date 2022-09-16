@@ -476,4 +476,5 @@ Leave the table alone, it will be deleted for you.
 Please also delete your Cloud9 environment.
 
 ## Thanks a lot!
+If your are done, you can sign out.
 Thank you very much for doing this CDK201 workshop. I hope you enjoyed it and learned something new.
