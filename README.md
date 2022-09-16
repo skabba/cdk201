@@ -22,10 +22,9 @@ EXPLAIN SOMETHING HERE
 ```shell
 git config --global user.email "fake@example.com"
 git config --global user.name "Fake Name"
-export STACK_SUFFIX=$(cat /dev/urandom | \
-                    tr -dc '[:alpha:]' | \
-                    fold -w ${1:-10} | \
-                    head -n 1)
+export FIRST_NAME="YourFirstNameWithoutSpecialCharacters"
+export LAST_NAME="YourLastNameWithoutSpecialCharacters"
+export STACK_SUFFIX="${FIRST_NAME}_${LAST_NAME}"
 mkdir my-first-crud-api-${STACK_SUFFIX} && cd $_
 cdk init app --language=python
 ls -al
