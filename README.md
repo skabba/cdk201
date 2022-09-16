@@ -90,6 +90,7 @@ Remove this piece of code:
 #     visibility_timeout=Duration.seconds(300),
 # )
 ```
+> **_NOTE:_** From this moment on, don't forget to save (CTRL+S) your files before running `cdk synth` or `cdk deploy`
 
 ### Step 4.1
 Our CRUD API will need the following AWS services:
