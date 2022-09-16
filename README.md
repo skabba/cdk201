@@ -382,7 +382,7 @@ export INVOKE_URL="https://YourApiUri.execute-api.eu-west-1.amazonaws.com/prod"
 
 Now run:
 ```shell
-curl -X GET ${INVOKE_URL}/items | js-beautify
+curl -s ${INVOKE_URL}/items | js-beautify
 ```
 
 You should get back the following output:
