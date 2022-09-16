@@ -234,7 +234,7 @@ Then go back to the file where we were defining our CRUD API Stack (the `my_firs
 ```python
         crud_api_lambda = _lambda.Function(
             self,
-            "HelloHandler",
+            "CrudHandler",
             runtime=_lambda.Runtime.NODEJS_16_X,
             code=_lambda.Code.from_asset("lambda"),
             handler="crud.handler",
@@ -335,7 +335,7 @@ class MyFirstCrudApiBikErVzMplStack(Stack):
 
         crud_lambda = _lambda.Function(
             self,
-            "HelloHandler",
+            "CrudHandler",
             runtime=_lambda.Runtime.NODEJS_16_X,
             code=_lambda.Code.from_asset("lambda"),
             handler="crud.handler",
