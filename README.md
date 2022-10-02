@@ -467,7 +467,10 @@ You should get back the following output:
 
 > **_CHALLENGE_**: Get all items to verify that the item was deleted or check in the AWS console.
 
-## Step 7 - Clean UP!
+## Step 7 - Bonus Challenge
+If your still have time left then try to add an API Gateway method to delete all items at once.
+
+## Step 8 - Clean UP!
 To prevent unnecessary costs, delete the resources that you created as part of this getting started exercise. The following steps delete your REST API, your Lambda function, and associated resources.
 
 Run and watch output:
