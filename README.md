@@ -36,8 +36,8 @@ ls -al
 
 ```
 
-### Explain files
-abc
+### Explain files - TODO Sorry...
+:-)
 
 ```console
 total 28
@@ -60,7 +60,6 @@ drwxrwxr-x 5 ec2-user ec2-user   74 Sep 14 08:34 .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-pip install black
 pip freeze > requirements.txt
 
 ```
@@ -84,7 +83,7 @@ cdk deploy
 To deploy your (still empty) CDK app and check the output. In a new browser tab open: https://eu-west-1.console.aws.amazon.com/cloudformation and search/select/open your `MyFirstCrudApi${STACK_SUFFIX}Stack` stack. You can now review your stack configuration.
 
 ## Step 4
-Open your `my_first_crud_api_${STACK_SUFFIX}` folder and then open the `my_first_crud_api_${STACK_SUFFIX}_stack.py` file.
+In the online IDE on the left side now open your `my_first_crud_api_${STACK_SUFFIX}/my_first_crud_api_${STACK_SUFFIX}` folder and then open the `my_first_crud_api_${STACK_SUFFIX}_stack.py` file.
 
 Remove this piece of code:
 ```python
@@ -94,7 +93,7 @@ Remove this piece of code:
 #     visibility_timeout=Duration.seconds(300),
 # )
 ```
-> **_NOTE:_** From this moment on, don't forget to save (CTRL+S) your files before running `cdk synth` or `cdk deploy`
+> **_NOTE:_** From this moment on, don't forget to save (Windows: CTRL+S or MacOS: CMD+S) your files before running `cdk synth` or `cdk deploy`. Cloud9 has no built-in Auto-Save option.
 
 ### Step 4.1
 Our CRUD API will need the following AWS services:
@@ -106,9 +105,9 @@ We can import the respective CDK modules in our code. In `my_first_crud_api_${ST
 **CHANGE THIS CODE**:
 ```python
 from aws_cdk import (
-    Duration,
+    # Duration,
     Stack,
-    aws_sqs as sqs,
+    # aws_sqs as sqs,
 )
 ```
 **INTO THIS CODE**:
@@ -158,6 +157,7 @@ Your DynamoDB table has now been deployed!
 
 ### Step 5.2 - Add CRUD Lambda Function
 We first will create the Lambda function itself:
+> **_NOTE:_** The lambda folder that you will now create, needs to be create inside the root of your CDK project! At the same level where the the `tests` folder is created.
 ```shell
 mkdir lambda
 touch lambda/crud.js
@@ -440,7 +440,7 @@ You should get back the following output:
 ### Step 6.3 - Get item by ID
 Use the following command to get an item by its ID:
 ```shell
-curl -s $INVOKE_URL/items/abcdef234 | js-beautify
+curl -s ${INVOKE_URL}/items/abcdef234 | js-beautify
 ```
 
 You should get back the following output:
@@ -457,7 +457,7 @@ You should get back the following output:
 ### Step 6.4 - Delete item by ID
 Use the following command to delete an item:
 ```shell
-curl -X "DELETE" $INVOKE_URL/items/abcdef234
+curl -X "DELETE" ${INVOKE_URL}/items/abcdef234
 ```
 
 You should get back the following output:
